@@ -1,2 +1,3 @@
-# Laravel-database-normalization
+# Laravel Database Normalization
+
 Database normalizer for Laravel
