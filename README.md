@@ -18,6 +18,8 @@ Table: users
 
 Fields: id, name, password, email
 
+__________________________________________________________________________
+
 Não é bom usar ORM com bancos de dados que não corretamente estruturados. 
 
 Há tabelas e atributos nomeados com números e até mesmo caracteres especiais. 
