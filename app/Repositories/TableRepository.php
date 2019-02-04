@@ -132,7 +132,7 @@ class TableRepository
         $data_file_model .= 'namespace App\Models;' . "\n" . "\n";
         $data_file_model .= 'use Illuminate\Database\Eloquent\Model;' . "\n" . "\n";
         $data_file_model .= 'class ';
-        $data_file_model .= $table->class_name;
+        $data_file_model .= ucfirst($table->class_name);
         $data_file_model .= ' extends Model' . "\n";
         $data_file_model .= '{' . "\n" . "\n";
 
@@ -229,7 +229,7 @@ class TableRepository
 
         $data_file_model .= '}';
 
-        file_put_contents( "../storage/app/normalize/Models/".$table->class_name.'.php', $data_file_model );
+        file_put_contents( "../storage/app/normalize/Models/" . ucfirst($table->class_name) . '.php', $data_file_model );
     }
 
     public function repository_generate( $table ) {
