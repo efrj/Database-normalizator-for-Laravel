@@ -232,54 +232,6 @@ class TableRepository
         file_put_contents( "../storage/app/normalize/Models/" . ucfirst($table->class_name) . '.php', $data_file_model );
     }
 
-    public function repository_generate( $table ) {
-        $table = $this->find_by_name( $table );
-
-        $data_file_repo = '<?php' . "\n";
-        $data_file_repo .= 'namespace Repo;' . "\n" . "\n";
-
-        $data_file_repo .= 'use App\Models\\' . $table->class_name . ';' . "\n";
-
-        $data_file_repo .= 'use Repo\BaseRepository;' . "\n" . "\n";
-
-        $data_file_repo .= 'class '. $table->class_name . 'Repository' . "\n";
-        $data_file_repo .= '{' . "\n";
-        $data_file_repo .= "\t" . 'use BaseRepository;' . "\n" . "\n";
-
-        $data_file_repo .= "\t" . 'private $' . from_camel_case($table->class_name) . ';' . "\n" . "\n";
-
-        foreach ( $table->fields as $key => $attr ) {
-            if ( ! empty( $attr->standard_attribute) ) {
-                $data_file_repo .= "\t" . 'public $' . $attr->standard_attribute . ";" . "\n";
-            }
-        }
-
-        $data_file_repo .= "\t" . '/**' . "\n";
-        $data_file_repo .= "\t" . ' * Attributes list Original Attributes' . "\n";
-        $data_file_repo .= "\t" . ' * @var array $attr_original' . "\n";
-        $data_file_repo .= "\t" . ' */' . "\n";
-        $data_file_repo .= "\t" . 'protected $attr_original = [' . "\n";
-        foreach ( $table->fields as $key => $attr ) {
-            if ( ! empty( $attr->standard_attribute) ) {
-                $data_file_repo .= "\t" . "\t" . "'" . $attr->standard_attribute . "'" . ' => ' . "'" . $attr->field_name . "'," . "\n";
-            }
-        }
-        $data_file_repo .= "\t" . '];' . "\n" . "\n";
-
-        $data_file_repo .= "\t" . '/**' . "\n";
-        $data_file_repo .= "\t" . ' * [__construct Inicialize a new ' . $table->class_name . ' Object]' . "\n";
-        $data_file_repo .= "\t" . ' * @param ' . $table->class_name . ' $'. from_camel_case($table->class_name) . ' [Object for ' . $table->class_name . ' Class]' . "\n";
-        $data_file_repo .= "\t" . ' */' . "\n";
-        $data_file_repo .= "\t" . 'public function __construct('. $table->class_name . ' ' . '$'. from_camel_case($table->class_name) . ') {' . "\n";
-        $data_file_repo .= "\t" . "\t" . '$this->obj_name = '. "'" . from_camel_case($table->class_name) . "';" . "\n";
-        $data_file_repo .= "\t" . "\t" . '$this->{$this->obj_name} = ' . '$' . from_camel_case($table->class_name) . ';' . "\n";
-        $data_file_repo .= "\t" . '}' . "\n";
-
-        $data_file_repo .= '}';
-
-        file_put_contents( "../storage/app/normalize/Repositories/".$table->class_name . 'Repository' .'.php', $data_file_repo );
-    }
-
     public function get_belongs_to( $table ) {
         $table = $this->find_by_name( $table );
 
