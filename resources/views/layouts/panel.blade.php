@@ -8,7 +8,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>@yield('title') - Mister Maker</title>
+<title>@yield('title') - Database normalizer</title>
 
 <!-- BOOTSTRAP STYLES-->
 <link href="{{ URL::asset('assets/css/bootstrap.css') }}" rel="stylesheet" />
@@ -35,7 +35,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}"><span class="fa fa-cogs"></span> Mister Maker</a> 
+            <a class="navbar-brand" href="{{ url('/') }}">Database normalizer</a> 
         </div>
         <div class="btn-logout" style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"> {{-- Last access : 16 Apr 2017 --}} &nbsp;
             <form id="logout-form" action="{{ url('/logout') }}" method="POST">
