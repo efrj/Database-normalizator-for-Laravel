@@ -24,13 +24,13 @@ __________________________________________________________________________
 
 #### Instruções em Português  
 
-Não é bom usar ORM com bancos de dados que não corretamente estruturados. 
+Não é bom usar ORM com bancos de dados que não esteja corretamente estruturado. 
 
 Há tabelas e atributos nomeados com números e até mesmo caracteres especiais. 
 
-Este normalizador gera um model para a tabela do banco de dados baseado na normalização feita pelo desenvolvedor. Nenhuma alteração é feita no banco de dados normalizado. 
+Este normalizador gera um model para a tabela do banco de dados baseado na normalização feita pelo desenvolvedor. Nenhuma alteração é feita no banco de dados. A normalização ocorre em nível de configuação definida no Model. 
 
-Se no banco de dados a nomenclatura da tabela de usuários e seus atributos for nomeado por números é possível gerar o model com os dados normalizados. 
+Se no banco de dados a nomenclatura da tabela de usuários e seus atributos forem nomeados por números é possível gerar o model com os dados normalizados. 
 
 ### Exemplo: 
 
