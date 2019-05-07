@@ -1,3 +1,5 @@
+#### English instructions 
+
 # Database normalizator for Laravel
 
 It is not good to use ORM with databases that are not properly structured.
@@ -19,6 +21,8 @@ Table: users
 Fields: id, name, password, email
 
 __________________________________________________________________________
+
+#### Instruções em Português  
 
 Não é bom usar ORM com bancos de dados que não corretamente estruturados. 
 
