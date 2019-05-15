@@ -30,7 +30,7 @@ Há tabelas e atributos nomeados com números e até mesmo caracteres especiais.
 
 Este normalizador gera um model para a tabela do banco de dados baseado na normalização feita pelo desenvolvedor. Nenhuma alteração é feita no banco de dados. A normalização ocorre em nível de configuação definida no Model. 
 
-Se no banco de dados a nomenclatura da tabela de usuários e seus atributos forem nomeados por números é possível gerar o model com os dados normalizados. 
+Se no banco de dados a nomenclatura da tabela de usuários e seus atributos forem nomeados por números ou textos longos é possível gerar o model com os dados normalizados. 
 
 ### Exemplo: 
 
